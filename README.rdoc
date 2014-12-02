@@ -18,10 +18,10 @@ directory were automatically generated and of no value.
 
 Stick this in a directory and run these commands:
 
-bundle install
-rake db:migrate
-rake db:seed
-rails s
+  bundle install
+  rake db:migrate
+  rake db:seed
+  rails s
 
 At that point you should have the development server running on:
 
