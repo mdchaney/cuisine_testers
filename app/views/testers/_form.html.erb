@@ -18,7 +18,15 @@
 
   <div class="field">
     <%= f.label :cuisine_ids %><br />
-    <%= f.collection_select :cuisine_ids, Cuisine.all, :id, :name, {}, { multiple: true, size: 5 } %>
+    <%#  For Rails 4: = f.collection_check_boxes :cuisine_ids, Cuisine.order(:name), :id, :name %>
+    <ul>
+      <% Cuisine.order(:name).each do |cuisine| -%>
+        <li>
+          <%= check_box_tag "tester[cuisine_ids][]", cuisine.id, f.object.cuisine_ids.include?(cuisine.id) %>
+          <%= cuisine.name %>
+        </li>
+      <% end -%>
+    </ul>
   </div>
 
   <div class="actions">
