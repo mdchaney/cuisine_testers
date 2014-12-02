@@ -1,6 +1,6 @@
 class Cuisine < ActiveRecord::Base
   has_many :ratings, inverse_of: :cuisine
-  has_many :testers, through: :ratings
+  has_many :testers, order: 'testers.name', through: :ratings
 
   attr_accessible :name, :tester_ids
 
