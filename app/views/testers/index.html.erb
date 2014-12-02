@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Cuisines</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @testers.each do |tester| %>
   <tr>
     <td><%= tester.name %></td>
+    <td><%= tester.cuisines.collect(&:name).join(', ') %></td>
     <td><%= link_to 'Show', tester %></td>
     <td><%= link_to 'Edit', edit_tester_path(tester) %></td>
     <td><%= link_to 'Destroy', tester, method: :delete, data: { confirm: 'Are you sure?' } %></td>

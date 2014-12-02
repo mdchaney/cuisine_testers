@@ -5,6 +5,11 @@
   <%= @cuisine.name %>
 </p>
 
+<p>
+  <b>Testers (through ratings):</b>
+  <%= @cuisine.testers.collect(&:name).join(', ') %>
+</p>
+
 
 <%= link_to 'Edit', edit_cuisine_path(@cuisine) %> |
 <%= link_to 'Back', cuisines_path %>

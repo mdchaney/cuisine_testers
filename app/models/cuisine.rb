@@ -1,5 +1,8 @@
 class Cuisine < ActiveRecord::Base
-  attr_accessible :name
+  has_many :ratings, inverse_of: :cuisine
+  has_many :testers, through: :ratings
+
+  attr_accessible :name, :tester_ids
 
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
 end
