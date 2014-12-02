@@ -13,3 +13,9 @@ unless Cuisine.any?
   Cuisine.create!(name: 'Mexican')
   Cuisine.create!(name: 'American')
 end
+
+unless Tester.any?
+  Tester.create!(name: 'Jack Daniel')
+  Tester.create!(name: 'Jim Beam')
+  Tester.create!(name: 'George Dickel')
+end

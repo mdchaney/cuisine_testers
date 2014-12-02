@@ -1,4 +1,7 @@
 CuisineTesters::Application.routes.draw do
+  resources :testers
+
+
   resources :cuisines
 
 
